@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <style>
+      body {
+          background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #09203f);
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          height: 100vh;
+      }
+  
+      @keyframes gradient {
+          0% {
+              background-position: 0% 50%;
+          }
+          50% {
+              background-position: 100% 50%;
+          }
+          100% {
+              background-position: 0% 50%;
+          }
+      }
+  </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  
+  <body>
+ 
+    
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <div style= "margin-left: 20px;">
+        <a class="navbar-brand">AnyWEATHER</a> </div>
+        <form class="form-inline">
+          <div class="row">
+            <div class="col">
+              <input id="city" class="form-control" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </nav>
+      
+      
+      <main>
+          <div class="container">
+              <h1 class= "my-4 text-center"> Weather for <span id="cityName"></span> </h1>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Check</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id=feels_like2></span><small class="text-body-secondary fw-light">
+                    <span>&#8451;</span></small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Feels Like <span id="feels_like"></span></li>
+                  <li>Humidity <span id="humidity"></span></li>
+                  <li>Max Temperature <span id= "max_temp"></span></li>
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Weather</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id=min_temp2></span><small class="text-body-secondary fw-light"> 
+                    <span>&#8451;</span></small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Min Temperature <span id="min_temp"></span></li>
+                    <li>Sunrise <span id="sunrise"></span></li>
+                    <li>Sunset <span id= "sunset"></span></li>
+                    
+                </ul>
+               
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Anytime</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id=wind_speed2></span><small class="text-body-secondary fw-light"> km/h</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Temperature <span id="temp"></span></li>
+                    <li>Wind Degrees <span id="wind_degrees"> </span></li>
+                    <li>Wind Speed <span id= "wind_speed"></span></li>
+                </ul>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <h2 class="display-6 text-center mb-4">Your Cities' Weather</h2>
+    
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%;"></th>
+                
+                <th style="width: 22%;"> Feels_like </th>
+                <th style="width: 22%;"> Humidity </th> 
+                <th style="width: 22%;"> Max_temp </th>
+                <th style="width: 22%;"> Min_temp </th>
+                <th style="width: 22%;"> Sunrise </th>
+                <th style="width: 22%;"> Sunset </th>
+                <th style="width: 22%;"> Temp </th>
+                <th style="width: 22%;"> Wind_degrees </th>
+                <th style="width: 22%;"> Wind_speed </th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Hathras</th>
+                <td><span id="tushar1"> </span></td>
+                <td> <span id= "tushar2"></span> </td>
+                <td> <span id= "tushar3"></span> </td>
+                <td> <span id= "tushar4"></span> </td>
+                <td> <span id= "tushar5"></span> </td>
+                <td> <span id= "tushar6"></span> </td>
+                <td> <span id= "tushar7"></span> </td>
+                <td> <span id= "tushar8"></span> </td>
+                <td> <span id= "tushar9"></span> </td>
+                
+            
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Agra</th>
+                <td><span id="tushars1"> </span></td>
+                <td> <span id= "tushars2"></span> </td>
+                <td> <span id= "tushars3"></span> </td>
+                <td> <span id= "tushars4"></span> </td>
+                <td> <span id= "tushars5"></span> </td>
+                <td> <span id= "tushars6"></span> </td>
+                <td> <span id= "tushars7"></span> </td>
+                <td> <span id= "tushars8"></span> </td>
+                <td> <span id= "tushars9"></span> </td>
+              </tr>
+            </tbody>
+    
+            
+          </table>
+        </div>
+    </div>
+      </main>
+          
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src= script.js> </script>
+  </body>
+</html>
